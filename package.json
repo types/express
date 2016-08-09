@@ -1,0 +1,18 @@
+{
+  "name": "typed-express",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Typings for express",
+  "scripts": {
+    "build": "typings bundle -o test/bundle.d.ts",
+    "test": "tsc -p test",
+    "lint": "tslint -c tslint.json index.d.ts lib/**/*.d.ts test/**/*.ts"
+  },
+  "author": "Felix Becker <felix.b@outlook.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^3.13.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.1"
+  }
+}

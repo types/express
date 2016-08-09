@@ -1,0 +1,5 @@
+typings/
+node_modules/
+test/bundle.d.ts
+*.js
+

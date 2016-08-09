@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "moduleResolution": "node"
+  },
+  "files": [
+    "../typings/index.d.ts",
+    "bundle.d.ts",
+    "app.ts",
+    "middleware.ts",
+    "params.ts",
+    "router.ts"
+  ]
+}

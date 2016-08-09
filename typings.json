@@ -1,0 +1,12 @@
+{
+  "name": "express",
+  "main": "index.d.ts",
+  "homepage": "https://github.com/felixfbecker/typed-express",
+  "dependencies": {
+    "serve-static": "github:felixfbecker/typed-serve-static"
+  },
+  "version": "4.14.0",
+  "globalDependencies": {
+    "node": "registry:env/node#6.0.0+20160723033700"
+  }
+}
