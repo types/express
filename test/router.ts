@@ -1,14 +1,14 @@
 
-import {Router} from 'express';
+import {Router, Request, Response, NextFunction} from 'express';
 
 const router = Router();
 
-router.move('/somepath', (req, res) => {
+router.move('/somepath', (req: Request, res: Response) => {
     res.set('Location', res.get('Destination'));
 });
 
 router.route('/someroute')
-    .get((req, res, next) => {
+    .get((req: Request, res: Response, next: NextFunction) => {
         req.accepts('application/json');
         console.log('hello');
     });

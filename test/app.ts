@@ -12,14 +12,13 @@ const requestHandler: express.RequestHandler = (req, res, next) => {
     next(new Error());
 };
 
-app.get('/hello-world', (req, res, next) => {
-    // inferred types
+app.get('/hello-world', (req: express.Request, res: express.Response, next: express.NextFunction) => {
     console.log(req.hostname);
     res.send('Hello World');
     next();
 });
 
-app.put('/users/:userId', (req, res, next) => {
+app.put('/users/:userId', (req: express.Request, res: express.Response, next: express.NextFunction) => {
     res.status(400);
 });
 
