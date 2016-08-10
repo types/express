@@ -10,14 +10,14 @@ class User {
     username: string;
 }
 
-interface WithUser {
+interface Authenticated {
     user: User;
 }
 
-const userMiddleware: RequestHandler = (req: Request & WithUser, res: Response, next: NextFunction) => {
+const userMiddleware: RequestHandler = (req: Request & Authenticated, res: Response, next: NextFunction) => {
     req.user = new User();
 };
 
-app.post('/echo', userMiddleware, (req: Request & WithUser, res: Response, next: NextFunction) => {
+app.post('/echo', userMiddleware, (req: Request & Authenticated, res: Response, next: NextFunction) => {
     console.log(req.user.username);
 });

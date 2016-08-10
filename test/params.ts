@@ -11,22 +11,22 @@ app.post('/whatever/:aParam', (req: Request, res: Response, next: NextFunction) 
     res.send(req.params['aParam']);
 });
 
-// specifying what's available inline
-app.post('/whatever/:aParam', (req: Request & {params: {aParam: string}}, res: Response, next: NextFunction) => {
-    res.send(req.params.aParam);
-    // this will now error:
-    // res.send(req.params.anotherParam);
-});
-
-// specifying what's available as a type (you type more here, like the body)
-type MyCustomRequest = Request & {
+// specifying the params as an interface
+interface WhateverParams {
     params: {
         aParam: string;
     };
 }
-app.post('/whatever/:aParam', (req: MyCustomRequest, res: Response, next: NextFunction) => {
+app.post('/whatever/:aParam', (req: Request & WhateverParams, res: Response, next: NextFunction) => {
     res.send(req.params.aParam);
-    // this will now error:
+    // accessing a non-existend param would now throw a compile-time error:
+    // res.send(req.params.anotherParam);
+});
+
+// specifying what's available inline
+app.post('/whatever/:aParam', (req: Request & {params: {aParam: string}}, res: Response, next: NextFunction) => {
+    res.send(req.params.aParam);
+    // accessing a non-existend param would now throw a compile-time error:
     // res.send(req.params.anotherParam);
 });
 
