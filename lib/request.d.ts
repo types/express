@@ -1,5 +1,5 @@
 
-import {ServerRequest} from 'http';
+import {IncomingMessage} from 'http';
 import {Application} from './application';
 
 declare namespace req {
@@ -26,7 +26,7 @@ declare namespace req {
         end: number;
     }
 
-    export interface Request extends ServerRequest {
+    export interface Request extends IncomingMessage {
 
         /**
          * Return the protocol string "http" or "https"
