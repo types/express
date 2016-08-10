@@ -3,7 +3,7 @@
   "main": "index.d.ts",
   "homepage": "https://github.com/felixfbecker/typed-express",
   "dependencies": {
-    "serve-static": "github:felixfbecker/typed-serve-static"
+    "serve-static": "registry:npm/serve-static#1.11.1+20160810053450"
   },
   "version": "4.14.0",
   "globalDependencies": {
