@@ -19,7 +19,7 @@ declare namespace createRouter {
         (err: any, req: Request, res: Response, next: NextFunction): any;
     }
 
-    export interface RequestParamHandler {
+    export interface ParamHandler {
         (req: Request, res: Response, next: NextFunction, value: any, name: string): any;
     }
 
@@ -51,12 +51,12 @@ declare namespace createRouter {
          *        });
          *      });
          */
-        param(name: string, handler: RequestParamHandler): this;
+        param(name: string, handler: ParamHandler): this;
 
         /**
          * @deprecated
          */
-        param(callback: (name: string, matcher: RegExp) => RequestParamHandler): this;
+        param(callback: (name: string, matcher: RegExp) => ParamHandler): this;
 
         all(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
         get(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;

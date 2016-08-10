@@ -2,7 +2,7 @@
 import {Server} from 'http';
 import {ListenOptions} from 'net';
 import {EventEmitter} from 'events';
-import {Router, RequestParamHandler, RequestHandler, PathParams} from './router/index';
+import {Router, RequestHandler, ParamHandler, PathParams} from './router/index';
 
 declare namespace app {
     export interface Application extends EventEmitter, Router {
@@ -96,12 +96,12 @@ declare namespace app {
          * For example, when :user is present in a route path, you may map user loading logic to automatically
          * provide req.user to the route, or perform validations on the parameter input.
          */
-        param(name: string | string[], handler: RequestParamHandler): this;
+        param(name: string | string[], handler: ParamHandler): this;
 
         /**
          * @deprecated
          */
-        param(callback: (name: string, matcher: RegExp) => RequestParamHandler): this;
+        param(callback: (name: string, matcher: RegExp) => ParamHandler): this;
 
         /**
          * Return the app's absolute pathname
