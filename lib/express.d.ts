@@ -16,6 +16,7 @@ declare namespace createApplication {
     export interface RequestHandler extends createRouter.RequestHandler { }
     export interface ErrorHandler extends createRouter.ErrorHandler { }
     export interface ParamHandler extends createRouter.ParamHandler { }
+    export type Handler = createRouter.Handler
     export interface NextFunction extends createRouter.NextFunction { }
 
     // need to use an interface for this because `static` is a reserved word

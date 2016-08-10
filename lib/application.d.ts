@@ -2,7 +2,7 @@
 import {Server} from 'http';
 import {ListenOptions} from 'net';
 import {EventEmitter} from 'events';
-import {Router, RequestHandler, ParamHandler, PathArgument} from './router/index';
+import {Router, RequestHandler, ParamHandler, HandlerArgument, PathArgument} from './router/index';
 
 declare namespace app {
     export interface Application extends EventEmitter, Router {
@@ -81,7 +81,7 @@ declare namespace app {
         set(setting: string, val: any): this;
         get(name: string): any;
         // need to duplicate this here from the Router because of the overload
-        get(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        get(path: PathArgument, ...handlers: HandlerArgument[]): this;
 
         /**
          * Add callback triggers to route parameters, where name is the name of the parameter or an array of them,
