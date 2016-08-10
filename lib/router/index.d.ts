@@ -5,7 +5,7 @@ import Route = require('./route');
 
 declare namespace createRouter {
 
-    export type PathParams = string | RegExp | (string | RegExp)[];
+    export type PathArgument = string | RegExp | (string | RegExp)[];
 
     export interface NextFunction {
         (err?: any): void;
@@ -58,38 +58,38 @@ declare namespace createRouter {
          */
         param(callback: (name: string, matcher: RegExp) => ParamHandler): this;
 
-        all(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        get(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        post(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        put(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        head(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        delete(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        options(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        trace(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        copy(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        lock(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        mkcol(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        move(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        purge(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        propfind(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        proppatch(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        unlock(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        report(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        mkactivity(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        checkout(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        merge(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        'm-search'(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        notify(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        subscribe(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        unsubscribe(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        patch(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        search(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
-        connect(path: PathParams, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        all(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        get(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        post(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        put(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        head(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        delete(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        options(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        trace(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        copy(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        lock(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        mkcol(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        move(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        purge(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        propfind(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        proppatch(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        unlock(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        report(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        mkactivity(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        checkout(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        merge(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        'm-search'(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        notify(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        subscribe(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        unsubscribe(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        patch(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        search(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
+        connect(path: PathArgument, ...handlers: (RequestHandler | RequestHandler[])[]): this;
 
         use(...handlers: (RequestHandler | ErrorHandler | (RequestHandler | ErrorHandler)[])[]): this;
         use(mountPoint: string, ...handlers: (RequestHandler | ErrorHandler | (RequestHandler | ErrorHandler)[])[]): this;
 
-        route(prefix: PathParams): Route;
+        route(prefix: PathArgument): Route;
     }
 }
 
