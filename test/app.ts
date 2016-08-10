@@ -46,7 +46,4 @@ console.log(app.get('some_setting'));
 app.use('/mountpath', router);
 app.use(router);
 
-// serve-static
-app.use(express.static('/whatever', {etag: true}));
-
 app.listen(8080);
