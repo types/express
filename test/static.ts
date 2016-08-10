@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('/whatever', {
     etag: true,
     setHeaders(res: express.Response, path: string, stat: Stats) {
-        // test that it's possible to type `res` as an express response instead of http.IncomingMessage
+        // test that it's possible to type `res` as an express response instead of http.ServerResponse
         res.set('My-Header', 'my value');
     }
 }));
