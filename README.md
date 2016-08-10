@@ -15,8 +15,8 @@ import express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
+app.get('/', (req: express.Request, res: express.Response) => {
+  res.send('Hello World');
 });
 
 app.listen(3000);
