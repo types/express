@@ -1,5 +1,5 @@
 # Typed express
-[![Build Status](https://travis-ci.org/felixfbecker/typed-express.svg?branch=master)](https://travis-ci.org/felixfbecker/typed-express)
+[![Build Status](https://travis-ci.org/types/npm-express.svg?branch=master)](https://travis-ci.org/types/npm-express)
 
 Typescript Typings for [express](https://github.com/expressjs/express).
 
