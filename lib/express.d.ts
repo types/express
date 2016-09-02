@@ -9,15 +9,15 @@ import serveStatic = require('serve-static');
 declare namespace createApplication {
 
     // workaround to reexport the interfaces
-    export interface Request extends _Request { }
-    export interface Response extends _Response { }
-    export interface Application extends _Application { }
-    export interface Router extends createRouter.Router { }
-    export interface RequestHandler extends createRouter.RequestHandler { }
-    export interface ErrorHandler extends createRouter.ErrorHandler { }
-    export interface ParamHandler extends createRouter.ParamHandler { }
+    export type Request = _Request
+    export type Response = _Response
+    export type Application = _Application
+    export type Router = createRouter.Router
+    export type RequestHandler = createRouter.RequestHandler
+    export type ErrorHandler = createRouter.ErrorHandler
+    export type ParamHandler = createRouter.ParamHandler
     export type Handler = createRouter.Handler
-    export interface NextFunction extends createRouter.NextFunction { }
+    export type NextFunction = createRouter.NextFunction
 
     // need to use an interface for this because `static` is a reserved word
     // and cannot be used as a variable identifier
