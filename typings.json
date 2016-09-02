@@ -8,5 +8,8 @@
   "version": "4.14.0",
   "globalDependencies": {
     "node": "registry:env/node#6.0.0+20160723033700"
+  },
+  "globalDevDependencies": {
+    "node": "registry:env/node#6.0.0+20160902022231"
   }
 }
