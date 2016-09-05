@@ -278,7 +278,7 @@ declare namespace req {
          *      req.is('html');
          *      // => false
          */
-        is(type: string): boolean;
+        is(type: string | string[]): boolean;
     }
 }
 
