@@ -1,10 +1,18 @@
 
 import {HandlerArgument} from './index';
+import Layer = require('./layer');
 
 declare class Route {
 
     path: string;
-    stack: any;
+    stack: Layer[];
+
+    /**
+     * route handlers for various http methods
+     */
+    methods: {
+        [method: string]: boolean;
+    };
 
     constructor(path: string);
 

@@ -1,6 +1,7 @@
 
 import {IncomingMessage} from 'http';
 import {Application} from './application';
+import Route = require('./router/route');
 
 declare namespace req {
 
@@ -116,7 +117,10 @@ declare namespace req {
 
         query: any;
 
-        route: any;
+        /**
+         * Contains the currently-matched route
+         */
+        route: Route;
 
         originalUrl: string;
 
