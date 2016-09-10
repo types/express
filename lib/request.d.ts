@@ -115,19 +115,53 @@ declare namespace req {
          */
         method: string;
 
-        query: any;
+        /**
+         * This property is an object containing a property for each query string parameter in the
+         * route. If there is no query string, it is the empty object, {}.
+         */
+        query: {
+            [queryParam: string]: string;
+        };
 
         /**
          * Contains the currently-matched route
          */
         route: Route;
 
+        /**
+         * This property is much like req.url; however, it retains the original request URL, allowing you to rewrite
+         * req.url freely for internal routing purposes. For example, the “mounting” feature of app.use() will
+         * rewrite req.url to strip the mount point.
+         *
+         *     // GET /search?q=something
+         *     req.originalUrl
+         *     // => "/search?q=something"
+         *
+         * In a middleware function, req.originalUrl is a combination of req.baseUrl and req.path, as shown in the following example.
+         *
+         *     app.use('/admin', function(req, res, next) {  // GET 'http://www.example.com/admin/new'
+         *       console.log(req.originalUrl); // '/admin/new'
+         *       console.log(req.baseUrl); // '/admin'
+         *       console.log(req.path); // '/new'
+         *       next();
+         *     });
+         *
+         */
         originalUrl: string;
 
-        url: string;
-
+        /**
+         * The URL path on which a router instance was mounted. The req.baseUrl property is similar
+         * to the mountpath property of the app object, except app.mountpath returns the matched
+         * path pattern(s).
+         */
         baseUrl: string;
 
+        /**
+         * This property holds a reference to the instance of the Express application that is using
+         * the middleware. If you follow the pattern in which you create a module that just exports
+         * a middleware function and require() it in your main file, then the middleware can access
+         * the Express instance via req.app
+         */
         app: Application;
 
         /**
@@ -138,7 +172,10 @@ declare namespace req {
          * `req.params[n]`, where n is the nth capture group.
          * This rule is applied to unnamed wild card matches with string routes such as `/file/*`.
          */
-        params: { [param: string]: string } & { [param: number]: string };
+        params: {
+            [param: string]: string,
+            [captureGroup: number]: string
+        };
 
         /**
          * Return request header.
