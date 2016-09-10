@@ -14,6 +14,6 @@ declare interface Layer {
 declare const Layer: {
     (path: string, options?: Options, fn?: Function): Layer;
     new (path: string, options?: Options, fn?: Function): Layer;
-}
+};
 
 export = Layer;

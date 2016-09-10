@@ -2,7 +2,7 @@
 import {Server} from 'http';
 import {ListenOptions} from 'net';
 import {EventEmitter} from 'events';
-import {Router, RequestHandler, ParamHandler, HandlerArgument, PathArgument} from './router/index';
+import {Router, ParamHandler, HandlerArgument, PathArgument} from './router/index';
 
 declare namespace app {
     export interface Application extends EventEmitter, Router {
