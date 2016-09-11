@@ -116,6 +116,14 @@ declare namespace req {
         method: string;
 
         /**
+         * req.url is not a native Express property, it is inherited from Node's http
+         * module. In opposite to req.originalUrl, req.url is rewritten for internal
+         * routing purposes. For example, the "mounting"" feature of app.use() will
+         * rewrite req.url to strip the mount point.
+         */
+        url: string; // needs to be redefined because IncomingMessage.url is optional
+
+        /**
          * This property is an object containing a property for each query string parameter in the
          * route. If there is no query string, it is the empty object, {}.
          */
