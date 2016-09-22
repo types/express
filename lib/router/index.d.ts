@@ -28,6 +28,12 @@ declare namespace createRouter {
         (req: Request, res: Response, next: NextFunction, value: any, name: string): any;
     }
 
+    export interface RouterOptions {
+        caseSensitive?: boolean;
+        mergeParams?: boolean;
+        strict?: boolean;
+    }
+
     export interface Router extends RequestHandler {
 
         /**
@@ -283,5 +289,5 @@ declare namespace createRouter {
     }
 }
 
-declare function createRouter(): createRouter.Router;
+declare function createRouter(options?: createRouter.RouterOptions): createRouter.Router;
 export = createRouter;
